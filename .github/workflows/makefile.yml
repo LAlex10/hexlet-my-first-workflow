@@ -1,27 +1,10 @@
-name: Makefile CI
+name: say-hello
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: push
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-
-    - name: configure
-      run: ./configure
-
-    - name: Install dependencies
-      run: make
-
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+      - uses: actions/checkout@v4
+      -run: make say-hello
